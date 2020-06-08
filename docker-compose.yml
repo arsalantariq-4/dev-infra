@@ -10,7 +10,11 @@ services:
       - "6603:3306"
 
   web:
-    build: ./nodejs-microservice
+    build: ./teamway-be
+
+    volumes:
+      - /teamway-be/node_modules
+      - ./teamway-be:/teamway-be
 
     depends_on:
       - db
